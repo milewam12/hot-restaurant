@@ -13,18 +13,38 @@
 	<body
 		<div class="jumbotron">
 			<h1 class="text-center">Hot Restaurant</h1>
-			<h3 class="text-center">Current Reservations and Waiting List</h3>
+			<h3 class="text-center">Make a Reservation</h3>
 		</div>
 		<div class="container">
 			<div class="row">
 				
 				<div class="text-center">
 					<a href="/reserve">
-					<button type"=button" class = "btn btn-lg btn-danger">Make a Reservation</button>
+					<button type"=button" class = "btn btn-lg btn-primary">See Tables</button>
 					</a>
-					<a href="/"><button type"=button" class = "btn btn-lg btn-danger">Home</button>
+					<a href="/"><button type"=button" class = "btn btn-lg btn-default">Home</button>
 					</a>
 					</div>
+
+					<form>
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input type="name" class="form-control" id="name" placeholder="Name">
+  </div>
+  <div class="form-group">
+    <label for="phoneNumber">Phone Number</label>
+    <input type="phoneNumber" class="form-control" id="phoneNumber" placeholder="Phone Number">
+  </div>
+   <div class="form-group">
+    <label for="email">Email</label>
+    <input type="email" class="form-control" id="email" placeholder="Email">
+  </div>
+   <div class="uniqueId">
+    <label for="uniqueId">Unique ID</label>
+    <input type="uniqueId" class="form-control" id="phoneNumber" placeholder="Unique ID">
+  </div>
+  <button type="submit" class="btn btn-default">Submit</button>
+</form>
 						
 					</body>
 				</html>
