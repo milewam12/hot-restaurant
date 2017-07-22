@@ -1,38 +1,47 @@
 
+// TA Patricks Way
 
+// $('.submitBtn').on('click', function(){
+//  submitCustomer();
+// });
 
-$('.submitBtn').on('click', function(){
- submitCustomer();
-});
+// function submitCustomer(name, phoneNumber, email, uniqueID){
+// 	$.ajax({
 
-function submitCustomer(){
-	$.ajax({
+//         method: 'POST',
 
-        method: 'POST',
+//         url: '/api/new',
 
-        url: '/api/new',
+//         data: {
+//         	name: name,
+//         	phoneNumber: phoneNumber,
+//         	email: email,
+//         	uniqueID: uniqueID
+//         },
+//         success: function(response){
+//             console.log(response);
 
-        data: {
-        	customerName: 'test'
-        },
-        success: function(response){
-            console.log(response);
-            //if response success reload page
-        }
+//             //if response success reload page
+//         }
 
+//     });
+// }
+
+// Teacher Patrick's Way
+
+$("#submit").on("click", function(event) {
+      event.preventDefault();
+      var newCustomer = {
+        customerName: $("#name").val().trim(),
+        phoneNumber: $("#phoneNumber").val().trim(),
+        customerEmail: $("#email").val().trim(),
+        customerID: $("#uniqueID").val().trim()
+      };
+
+     // Question: What does this code do??
+      $.post("/api/new", newCustomer)
+      .done(function(data) {
+        console.log(data);
+        alert("Successfully made reservation!");
+      });
     });
-}
-
-
-
-// app.get("/", function(req, res) {
-//   res.sendFile(path.join(__dirname, "view.html"));
-// });
-
-// app.get("/tables", function(req, res) {
-//   res.sendFile(path.join(__dirname, "tables.html"));
-// });
-
-// app.get("/reserve", function(req, res) { 
-// 	res.sendFile(path.join(__dirname, "reserve.html"));
-// });
