@@ -72,9 +72,12 @@ app.get("/reserve", function (req, res) {
 app.get("/tables", function (req, res) {
     
  res.sendFile(path.join(__dirname, "tables.html"));
-}
+});
+ 
+app.get("/back.js", function (req, res) {
     
-);
+ res.sendFile(path.join(__dirname, "back.js"));
+});
 
 
 // CREATING API FOR CUSTOMERS
@@ -112,10 +115,10 @@ console.log(newCustomer);
 
    if(customers.length < 3){
     customers.push(newCustomer)
-     res.json(newCustomer)
+     res.json({status: 'success'})
     }else{
         waitList.push(newCustomer);
-        res.json(newCustomer);
+        res.json({status: 'success'});
     }
 });
 
