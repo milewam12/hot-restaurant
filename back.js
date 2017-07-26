@@ -45,3 +45,17 @@ $("#submit").on("click", function(event) {
         alert("Successfully made reservation!");
       });
     });
+
+$.get("/api/" , function(data) {
+        console.log(data);
+        if (data) {
+          $("#name").text(data.name);
+          $("#phoneNumber").text(data.phoneNumber);
+          $("#age").text(data.age);
+          $("#uniqueID").text(data.forcePoints);
+        }
+        else {
+          $("#name").text("The force is not strong with this one. Your character was not found.");
+          $("#stats").hide();
+        }
+      });
